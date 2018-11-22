@@ -1,0 +1,17 @@
+<div id="wrapper" [ngClass]="_global.isMenuToggle ? 'toggled' : ''">
+  <div id="sidebar-wrapper">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div id="page-content-wrapper">
+    <app-header></app-header>
+
+    <!-- Main -->
+    <main>
+      <div class="container-fluid mt-3">
+          <router-outlet></router-outlet>
+      </div>
+    </main>
+    <!-- /.Main -->
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<h2 class="text-muted">Añadir restaurante</h2>
+
+<form role="form" [formGroup]="restaurantForm" (ngSubmit)="registerRestaurant()">
+  <div class="form-content">
+    <div class="form-group">
+      <label class="label-title">Nombre (*)</label>
+      <input type="text" class="form-control input-underline input-lg" placeholder="Nombre (*)" formControlName="name"
+        required autofocus="true">
+    </div>
+
+    <div class="form-group">
+      <label class="label-title">Dirección (*)</label>
+      <input type="text" class="form-control input-underline input-lg" placeholder="Dirección (*)" formControlName="address" required>
+    </div>
+
+    <div class="form-group">
+      <label class="label-title">Capacidad (*)</label>
+      <input type="number" class="form-control input-underline input-lg" min="0" max="100" placeholder="Capacidad (*)" formControlName="capacity"
+        maxlength="3" required>
+    </div>
+
+    <div class="form-group">
+      <label class="label-title">Descripción (*)</label>
+      <input type="text" class="form-control input-underline input-lg" placeholder="Descripción (*)" formControlName="description" required>
+    </div>
+  </div>
+  
+  <button class="btn btn-success" [disabled]="restaurantForm.invalid">Dar de alta </button>
+  <button type="button" class="btn btn-gray" (click)="cancelar()">Cancelar </button>
+</form>

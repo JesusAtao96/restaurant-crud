@@ -1,0 +1,30 @@
+<div class="login-page" [@routerTransition]>
+  <div class="row justify-content-md-center">
+    <div class="col-md-4">
+      <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+      <h1>Iniciar Sesión</h1>
+      <form role="form" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-content">
+          <div class="form-group">
+            <input type="text" class="form-control input-underline input-lg" placeholder="Introduce tu email"
+              formControlName="email" required autofocus="true">
+            <div *ngIf="loginForm.get('email').hasError('email')">
+              <p color="danger" ion-text>Email incorrecto</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control input-underline input-lg" placeholder="Introduce tu password"
+              formControlName="password" maxlength="18" required>
+            <div *ngIf="loginForm.get('password').hasError('pattern')">
+              <p color="danger" ion-text>Password muy debil</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn rounded-btn" [disabled]="loginForm.invalid" > Log in </button>
+        &nbsp;
+        <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+      </form>
+    </div>
+  </div>
+</div>

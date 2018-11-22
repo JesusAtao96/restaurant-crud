@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="menu-bar waves-light" href="javascript:void(0)" (click)="toggleMenu()" mdbWavesEffect>
+    <i class="fa fa-bars"></i>
+  </a>
+  <p class="navbar-brand m-0">{{_global.pageTitle}} </p>
+  <links>
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="navbar-nav nav-flex-icons">
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <i class="fa fa-language"></i> {{ 'Language' | translate }}
+          <span class="caret"></span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu" style="left: -5px !important;">
+          <a class="dropdown-item waves-light" mdbWavesEffect href="javascript:void(0)" (click)="changeLang('en')">{{ 'English' | translate }}</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="javascript:void(0)" (click)="changeLang('es')">{{ 'Spanish' | translate }}</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <i class="fa fa-user"></i> {{userName}}
+          <span class="caret"></span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu" style="left: -65px !important;">
+          <a class="dropdown-item waves-light" mdbWavesEffect href="javascript:void(0)">
+            <i class="fa fa-fw fa-user"></i> {{ 'Profile' | translate }}
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="javascript:void(0)">
+            <i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="javascript:void(0)">
+            <i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}
+          </a>
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/login']" (click)="onLoggedout()">
+            <i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}
+          </a>
+        </div>
+      </li>
+    </ul>
+  </links>
+  
+</nav>

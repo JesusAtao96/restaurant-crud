@@ -1,0 +1,11 @@
+<ul class="sidebar-nav">
+  <li class="sidebar-main">
+    <a routerLink="/restaurants">Admin</a>
+  </li>
+
+  <li class="sidebar-list">
+    <a routerLink="/restaurants" [routerLinkActive]="['router-link-active']" class="waves-light" mdbWavesEffect>
+      <i class="menu-icon fa fa-fw fa-dashboard"></i> {{ 'Dashboard' | translate }}
+    </a>
+  </li>
+</ul>
